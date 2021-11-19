@@ -17,7 +17,16 @@
 3. **Añadir columnas**. Se puede utilizar la sentencia: ALTER TABLE tabla ADD column columna VARCHAR(45) NULL AFTER ID;
 4. **Cambiar columna**. Se puede hacer desde el menú "Estructura" o con la sentencia: ALTER TABLE tabla CHANGE column columna_new VARCHAR(140) null DEFAULT "DATO";
 5. **Eliminar Columna** ALTER TABLE tabla DROP column;
-6. **Índices** Los índices permiten acelerar las búsquedas. Pueden ser de varios tipos:
+6. **Clave primaria** Identifica univocamente cada fila de la tabla. Ej de sentencia: 
+ALTER TABLE Customer ADD PRIMARY KEY (SID);
+
+8. **Clave foránea**. Es el campo de una tabla que se realaciona con otra tabla. Ej: 
+ALTER TABLE tu_tabla
+    ADD COLUMN [definición de columna],
+    ADD CONSTRAINT `fk_relacion` FOREIGN KEY (columna_recién_creada)
+        REFERENCES la_otra_tabla(columnaEnLaOtraTabla);
+
+10. **Índices** Los índices permiten acelerar las búsquedas. Pueden ser de varios tipos:
   - Index. Permiten duplicados.
   - Unique. Los valores deben ser únicos.
   - FullText. Se utiliza para las columnas de tipo texto.
@@ -25,4 +34,15 @@
   - Primary. Índice único y solo puede haber uno por tabla.
 
 El comando es: ALTER TABLE tabla ADD INDEX indice (campo ASC/DESC)
+
+11. **Privilegios y usuarios** Los usuarios y privilegios se pueden dar de alta desde el menú "Privilegios"
+También se puede usar el siguiente comando para crear un nuevo usuario: 
+CREATE USER 'newuser'@'localhost' IDENTIFIED BY 'password'; 
+
+Para dar permisos:
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON basededatos.* TO 'nombre_usuario'@'localhost';
+
+12. **Roles** Es un identificador que agrupa una sería de privilegios. Se crean con:
+CREATE ROLE rol;
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON basededatos.* TO rol;
 
