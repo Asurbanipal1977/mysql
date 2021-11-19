@@ -11,7 +11,7 @@
  * DCL (Lenguaje de control: Grant y Revoke)
  * Lenguaje de transacciones (rollback y commit)
 
-# 3.PHPMYADMIN
+# 3.PHPMYADMIN Y MYSQL
 1. **Cambiar el nombre de tabla**. Seleccionamos la tabla y menú de "Operaciones" o con la sentencia: ALTER TABLE cliente RENAME clientes;
 2. **Borrar tabla** También seleccionando la tabla y menú de "Operaciones" o con la sentencia: DROP TABLE clientes;
 3. **Añadir columnas**. Se puede utilizar la sentencia: ALTER TABLE tabla ADD column columna VARCHAR(45) NULL AFTER ID;
@@ -45,4 +45,31 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON basededatos.* TO 'nombre_u
 12. **Roles** Es un identificador que agrupa una sería de privilegios. Se crean con:
 CREATE ROLE rol;
 GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON basededatos.* TO rol;
+
+13. **FECHAS**
+- La fecha actual: curdate(), now(), localtime() y localtimestamp(). Las últimas tres, devuelven fecha y hora.
+- str_to_date(texto,formatofecha): Permite convertir texto en fecha
+- date(texto) se convierte la cadena a date.
+- datediff(fecha1,fecha2) se obtiene el número de días entre dos fechas.
+- dateadd(fecha, interval 10 day) se suma días a la fecha
+- extract(day from now()) para extraer el día de la fecha actual
+- date_format(fecha, formato) para formatear una fecha en un formato distinto
+
+14. **CADENAS**
+- Concat(cadena1,' ', cadena2)
+- Concat_ws(' ', cadena1,cadena2) Igual que la anterior, pero el carácter separador va al inicio.
+- instr(cadena,cadenaabuscar) Devuelve la posición de la cadenaabuscar dentro de cadena.
+
+15. **CONVERSIÓN**
+- Cast(campo as datetime) Para convertir un campo a formato datetime.
+- Convert('20011101', date): Para convertir una cadena a una fecha
+
+16. CIFRADO
+- AES_Encypt(cadena, llave). Para encriptar
+- AES_Decrypt(cadena, llave). Para desencriptar
+- md5(cadena) o sha(cadena) Para encriptar.
+- sha2(cadena, numero de bits). Para encriptar, pero se indica los bits para encriptar
+
+17. OTRAS FUNCIONEO
+-
 
