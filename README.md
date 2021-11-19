@@ -17,3 +17,12 @@
 3. **Añadir columnas**. Se puede utilizar la sentencia: ALTER TABLE tabla ADD column columna VARCHAR(45) NULL AFTER ID;
 4. **Cambiar columna**. Se puede hacer desde el menú "Estructura" o con la sentencia: ALTER TABLE tabla CHANGE column columna_new VARCHAR(140) null DEFAULT "DATO";
 5. **Eliminar Columna** ALTER TABLE tabla DROP column;
+6. **Índices** Los índices permiten acelerar las búsquedas. Pueden ser de varios tipos:
+  - Index. Permiten duplicados.
+  - Unique. Los valores deben ser únicos.
+  - FullText. Se utiliza para las columnas de tipo texto.
+  - Spacial. Para columnas de tipo spacial.
+  - Primary. Índice único y solo puede haber uno por tabla.
+
+El comando es: ALTER TABLE tabla ADD INDEX indice (campo ASC/DESC)
+
