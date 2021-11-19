@@ -10,3 +10,10 @@
  * DML (Lenguaje de Modificación)
  * DCL (Lenguaje de control: Grant y Revoke)
  * Lenguaje de transacciones (rollback y commit)
+
+# 3.PHPMYADMIN
+1. **Cambiar el nombre de tabla**. Seleccionamos la tabla y menú de "Operaciones" o con la sentencia: ALTER TABLE cliente RENAME clientes;
+2. **Borrar tabla** También seleccionando la tabla y menú de "Operaciones" o con la sentencia: DROP TABLE clientes;
+3. **Añadir columnas**. Se puede utilizar la sentencia: ALTER TABLE tabla ADD column columna VARCHAR(45) NULL AFTER ID;
+4. **Cambiar columna**. Se puede hacer desde el menú "Estructura" o con la sentencia: ALTER TABLE tabla CHANGE column columna_new VARCHAR(140) null DEFAULT "DATO";
+5. **Eliminar Columna** ALTER TABLE tabla DROP column;
