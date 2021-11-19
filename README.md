@@ -21,7 +21,7 @@
   - Index. Permiten duplicados.
   - Unique. Los valores deben ser únicos.
   - FullText. Se utiliza para las columnas de tipo texto.
-  - Spacial. Para columnas de tipo spacial.
+  - Spatial. Para columnas de tipo spatial.
   - Primary. Índice único y solo puede haber uno por tabla.
 
 El comando es: ALTER TABLE tabla ADD INDEX indice (campo ASC/DESC)
