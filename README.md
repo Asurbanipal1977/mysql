@@ -70,6 +70,21 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON basededatos.* TO rol;
 - md5(cadena) o sha(cadena) Para encriptar.
 - sha2(cadena, numero de bits). Para encriptar, pero se indica los bits para encriptar
 
-17. OTRAS FUNCIONEO
--
+17. OTRAS FUNCIONES
+- database()
+- user()
+- version()
+- found_rows()
+- last_insert_id()
+- row_count()
+
+18. FUNCIONES DE AGRUPACIÓN
+A parte de las comunes, existe una bastante útil, para sacar los valores nulos.
+Ej: select idCliente, count(idFactura) From cliente group by idCliente with rollup;
+
+Devolverá el número de facturas por cliente y, al final, las facturas sin idCliente.
+
+
+
+
 
