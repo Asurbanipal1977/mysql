@@ -112,6 +112,11 @@ And idCliente=1;
 
 El segundo caso, devolverá un null para cada cliente que no coincida con la consulta.
 
+20. IMPORTAR Y EXPORTAR
+- Para hacer un respaldo de la base de datos, se tiene que hacer:
+mysqldump -uroot -p base_de_datos> dirección_de_la_copia
+
+
 
 
 
