@@ -78,11 +78,39 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON basededatos.* TO rol;
 - last_insert_id()
 - row_count()
 
-18. FUNCIONES DE AGRUPACIÓN
-A parte de las comunes, existe una bastante útil, para sacar los valores nulos.
-Ej: select idCliente, count(idFactura) From cliente group by idCliente with rollup;
+18. FUNCIONES DE AGRUPACIÓN Y ORDENACIÓN
+A parte de las comunes, existe una bastante útil, para sacar el total.
+Ej: select idCliente, count(idFactura) From cliente group by idCliente **with rollup**;
 
-Devolverá el número de facturas por cliente y, al final, las facturas sin idCliente.
+Devolverá el número de facturas por cliente y, al final, el total de facturas.
+
+- **group_concat(columna)** permite obtener los elementos agrupados separados por una coma.
+- rand() en un order by indica que el orden es aleatorio.
+- limit numero: limita el número de filas recuperado al número indicado
+- limit desde, cantidad: limita el número de filas que se muestra. Muestra las filas desde la posición indicada en el primer parámetro hasta el número de filas indicada en el segundo
+- limit numero offset desde: muestra el número de elementos indicado y se salta el número indicado en offset.
+
+19. UNIONES DE TABLAS
+A parte del inner join, tenemos:
+- Cross join: une todas las filas de una tabla con la otra.
+Select * from cliente
+cross join factura;
+
+- left join y right join: En el caso de left join, devuelve los valores de la primera tabla aunque no coincidan con la segunda. El right join es similar, pero al revés.
+- natural join: cuando coinciden los nombres de los campos de dos tablas que se quieren unir.
+Select * from factura
+natural join detalle_factura;
+
+- Diferencia entre on y using
+Select * from cliente
+Left join factura using(idCliente)
+Where idCliente=1;
+
+Select * from cliente
+Left join factura on factura.idCliente=factura.idCliente
+And idCliente=1;
+
+El segundo caso, devolverá un null para cada cliente que no coincida con la consulta.
 
 
 
